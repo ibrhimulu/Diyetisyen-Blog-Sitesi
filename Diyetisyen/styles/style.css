@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+:root {
+  --main-color: #eeee;
+  --black-color: #111010;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: initial;
+  transition: 0.2s ease;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Temel html kodları    */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: #fff;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--black-color);
+  border-radius: 3rem;
+}
+
+body {
+  background-color: var(--main-color);
+}
+
+section {
+  padding: 3.5rem 7%;
+}
+
+.heading {
+  color: var(--black-color);
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 0.1rem solid var(--black-color);
+}
+
+.heading span {
+  color: var(--black-color);
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  --color: #00a97f;
+  padding: 0.8em 2.2em;
+  background-color: transparent;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border: 0.1rem solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.btn::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.btn::before {
+  top: -1em;
+  left: -1em;
+}
+
+.btn::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.btn:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.btn:hover {
+  color: rgb(10, 25, 30);
+}
+
+.btn:active {
+  filter: brightness(0.8);
+}
+
+/* Header başlangıcı */
+.header .logo img {
+  height: 10rem;
+}
+
+.header {
+  background-color: #e9ffc2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  margin: 2rem 7%;
+  border-radius: 30rem;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .navbar a {
+  margin: 0 1.8rem;
+  font-size: 1.8rem;
+  color: #4c4b16;
+  
+}
+
+.header .navbar:hover a {
+  filter: blur(3px);
+}
+
+.header .navbar a:hover {
+  filter: blur(0px);
+}
+
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 3rem;
+  background-color: transparent;
+}
+
+.header .buttons button i {
+  color: #4c4b16;
+}
+
+#menu-btn {
+  display: none;
+}
+
+/* Header bitişi */
+
+/* Hakkımda başlangıcı */
+.hakkimda {
+  min-height: 100vh;
+  display: flex;
+  margin-top: -14.5rem;
+}
+
+.hakkimda .content {
+  max-width: 60rem;
+}
+
+.hakkimda .content a img {
+  height: 34rem;
+  border-radius: 50%;
+  margin-left: 15rem;
+  margin-top: 20rem;
+}
+
+.hakkimda .content h3 {
+  font-size: 3rem;
+  margin-left: 15.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.hakkimda .onsoz p {
+  margin-left: 10rem;
+  margin-right: 20rem;
+  margin-top: 20rem;
+  font-size: 2rem;
+}
+
+/* Hakkımda bitişi */
+
+/* Blog Başlangıcı */
+.blog .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.blog .box-container .box {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 3rem;
+  min-height: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.blog .box-container .box img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+
+.blog .box-container .box:hover img {
+  transform: scale(1.1);
+}
+
+.blog .box-container .box h3 {
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.blog .box-container .box .content p {
+  color: #ccc;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+/* Blog Bitişi */
+
+/* Online Diyetisten Başlangıcı */
+.onlinediyet .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+.onlinediyet .row .image {
+  flex: 1 1 45rem;
+}
+
+.onlinediyet .row .image img {
+  width: 100%;
+}
+
+.onlinediyet .row .content {
+  flex: 1 1 45rem;
+}
+
+.onlinediyet .row .content h3 {
+  font-size: 3rem;
+  color: var(--black-color);
+}
+
+.onlinediyet .row .content p {
+  font-size: 1.6rem;
+  color: #111010;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+/* Online Diyetisten Bitişi */
+
+/* İletişim Başlangıcı */
+.contact .row {
+  display: flex;
+  background-color: var(--black-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form h3 {
+  text-transform: capitalize;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  border: var(--border);
+}
+
+.contact .row form .inputBox i {
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 2rem;
+  width: 100%;
+  text-transform: none;
+  background-color: transparent;
+}
+
+.inputBox input::-webkit-outer-spin-button,
+.inputBox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contact .row form .btn {
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* İletişim Bitişi */
+/* Footer Başlangıcı */
+.footer {
+  background-color: var(--black-color);
+  text-align: center;
+}
+
+.card {
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 5.2rem;
+  height: 5.2rem;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linkedin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.footer .credit {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+/* Footer Bitişi */
+
+/* Responsive Başlangıcı */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .header .logo img {
+    height: 7rem;
+  }
+
+section {
+  padding: 2rem;
+}
+}
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block;
+  }
+
+.header .navbar {
+  position: absolute;
+  top: 95%;
+  background-color: #e9ffc2;
+  height: calc(100vh - 9rem);
+  width: 30rem;
+  box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+}
+
+.header .navbar .active {
+  right: 3rem;
+}
+
+.header .navbar a {
+  color: var(--black-color);
+  display: block;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+}
+/* Responsive Bitişi */
